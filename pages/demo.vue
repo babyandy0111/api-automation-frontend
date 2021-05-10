@@ -19,14 +19,25 @@
 <script lang="ts">
 import {Vue, Component, Watch, Prop, Emit} from 'vue-property-decorator';
 import {$axios} from "~/utils/api";
+import {getIP, postIP} from "~/api";
 
 // Nuxt對Vue的拓展
 // 一定要加, 沒有加的話export default 不會生效
 // 可以不給options, 類似error畫面
 @Component({
   async asyncData(context) {
+    // 第一種方式
     const ip = await $axios.$get('http://icanhazip.com')
     console.log(ip);
+
+    // 第二種方式
+    const res1 = await getIP({type: 1})
+    console.log(res1.data);
+
+    // 第三種方式
+    const res2 = await postIP({andyts: 999})
+    console.log(res2.type);
+
     console.log("asyncData!");
     return {ip}
   },
