@@ -38,11 +38,12 @@ module.exports = {
       purple: colors.violet,
       pink: colors.pink,
 
-      'im-bg': '#8d8d8d',
-      'im-font': '#7b7b7b',
-      'im-icon-inactive': '#a9a77d',
-      'im-yellow': '#fff28c',
-      'im-yellow-dark': '#f0e485',
+      'iGray': '#8d8d8d',
+      'iBar': '#333333',
+      'iFont': '#7b7b7b',
+      'iFontY': '#f0e485',
+      'iIcon': '#a9a77d',
+      'iYellow': '#fff28c',
 
     },
     spacing: {

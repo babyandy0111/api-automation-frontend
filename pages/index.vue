@@ -1,13 +1,11 @@
 <template>
-  <div class="container flex flex-wrap">
-    <div class="w-1/3 bg-gray-500">
+  <div class="flex flex-wrap h-screen overflow-hidden">
+    <div class="w-1/3 bg-iBar">
       <List />
     </div>
-    <div class="w-2/3">
+    <div class="w-2/3 bg-iBar border-l-2 border-white">
       <Message />
     </div>
-{{ aaa }}
-
   </div>
 </template>
 
@@ -34,7 +32,8 @@ export default class homePage extends Vue {
 };
 </script>
 
-<style lang="scss" scopde>
+<style scopde>
+
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
