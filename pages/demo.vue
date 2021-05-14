@@ -22,15 +22,6 @@ import {$axios} from "~/utils/api";
 import {getIP, postIP} from "~/api";
 import { namespace } from "vuex-class";
 const AgnesModule = namespace("agnes");
-// import {
-//   State,
-//   Getter,
-//   Action,
-//   Mutation,
-//   namespace
-// } from 'vuex-class'
-
-// const AgnesModule = namespace('agnes')
 
 // Nuxt對Vue的拓展
 // 一定要加, 沒有加的話export default 不會生效
