@@ -37,6 +37,13 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+
+      'im-bg': '#8d8d8d',
+      'im-font': '#7b7b7b',
+      'im-icon-inactive': '#a9a77d',
+      'im-yellow': '#fff28c',
+      'im-yellow-dark': '#f0e485',
+
     },
     spacing: {
       px: '1px',

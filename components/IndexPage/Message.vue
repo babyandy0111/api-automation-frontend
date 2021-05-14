@@ -1,8 +1,5 @@
 <template>
   <div>
-    <Nuxt />
+    asdfghjkl
   </div>
 </template>
-
-<style>
-</style>

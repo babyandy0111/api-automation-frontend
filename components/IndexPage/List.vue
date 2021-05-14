@@ -1,8 +1,5 @@
 <template>
   <div>
-    <Nuxt />
+    12345678
   </div>
 </template>
-
-<style>
-</style>

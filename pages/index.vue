@@ -1,80 +1,43 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        nuxt-demo
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div class="container flex flex-wrap">
+    <div class="w-1/3 bg-gray-500">
+      <List />
     </div>
+    <div class="w-2/3">
+      <Message />
+    </div>
+{{ aaa }}
+
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import {Vue, Component, Watch, Prop, Emit} from 'vue-property-decorator';
+import List from '@/components/IndexPage/List.vue';
+import Message from '@/components/IndexPage/Message.vue';
 
-export default Vue.extend({})
+@Component({
+    components: {
+      List,
+      Message,
+    },
+})
+
+export default class homePage extends Vue {
+  // data
+  aaa: string = 'hi su3cl3';
+  b: number = 2
+  //methods
+  adda() {
+    this.b++;
+  }
+};
 </script>
 
-<style>
+<style lang="scss" scopde>
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
