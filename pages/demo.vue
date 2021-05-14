@@ -28,7 +28,7 @@ import {
   namespace
 } from 'vuex-class'
 
-const someModule = namespace('test')
+const AgnesModule = namespace('agnes')
 
 // Nuxt對Vue的拓展
 // 一定要加, 沒有加的話export default 不會生效
@@ -80,17 +80,22 @@ export default class IndexPage extends Vue {
 
   // 同Vue的created
   created() {
+    console.log("before action:", this.userNameState);
     console.log("Created!");
   }
 
   // 同Vue的beforeMount
   beforeMount() {
     console.log("Before Mount!");
+    this.setUserName('HI')
+    console.log("after action:", this.userNameState);
   }
 
   // 同Vue的mounted
   mounted() {
     console.log("Mounted!");
+    this.SET_USER_NAME('ABC')
+    console.log("after mutation:", this.userNameState);
 
     // 監聽事件“on-event”
     this.$on('on-event', function (val: string) {
@@ -167,8 +172,18 @@ export default class IndexPage extends Vue {
     console.log("Watch a:" + oldVal + " -> " + newVal);
   }
 
-  @State(state => state.test.andyts) andytsState?: string
-  @someModule.Getter('andy') andyGetter!: string
+  // ! 表示一定有值不用擔心
+  // Vuex State (含 namespace) 取法
+  @State(state => state.agnes.userName) userNameState!: string
+
+  // Vuex Getters (含 namespace) 取法
+  @AgnesModule.Getter('getUserName') getUserName!: string
+
+  // Vuex Actions (含 namespace) 取法
+  @AgnesModule.Action('setUserName') setUserName!: (name: string) => void
+
+  // Vuex Mutations (含 namespace) 取法
+  @AgnesModule.Mutation('SET_USER_NAME') SET_USER_NAME!: (name: string) => void
 }
 
 // 宣告一個類別, 一般會放在另外一個文件中,透過import引入

@@ -1,6 +1,7 @@
 import { Store, ActionTree } from 'vuex'
 import { getModule } from 'vuex-module-decorators'
 import Test from '~/store/test'
+import Agnes from '~/store/agnes'
 
 interface RootState {
   TestModule: Test,
@@ -16,9 +17,11 @@ export const actions: ActionTree<RootState, RootState> = {
 
 // eslint-disable-next-line import/no-mutable-exports
 let TestModule: Test
+let AgnesModule: Agnes
 
 function initialiseStores (store: Store<any>): void {
   TestModule = getModule(Test, store)
+  AgnesModule = getModule(Agnes, store)
 }
 
-export { initialiseStores, TestModule }
+export { initialiseStores, TestModule, AgnesModule }
