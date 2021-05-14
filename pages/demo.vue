@@ -20,6 +20,15 @@
 import {Vue, Component, Watch, Prop, Emit} from 'vue-property-decorator';
 import {$axios} from "~/utils/api";
 import {getIP, postIP} from "~/api";
+import {
+  State,
+  Getter,
+  Action,
+  Mutation,
+  namespace
+} from 'vuex-class'
+
+const someModule = namespace('test')
 
 // Nuxt對Vue的拓展
 // 一定要加, 沒有加的話export default 不會生效
@@ -157,6 +166,9 @@ export default class IndexPage extends Vue {
   routeChange(newVal: number, oldVal: number) {
     console.log("Watch a:" + oldVal + " -> " + newVal);
   }
+
+  @State(state => state.test.andyts) andytsState?: string
+  @someModule.Getter('andy') andyGetter!: string
 }
 
 // 宣告一個類別, 一般會放在另外一個文件中,透過import引入
