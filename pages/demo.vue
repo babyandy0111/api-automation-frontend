@@ -20,15 +20,17 @@
 import {Vue, Component, Watch, Prop, Emit} from 'vue-property-decorator';
 import {$axios} from "~/utils/api";
 import {getIP, postIP} from "~/api";
-import {
-  State,
-  Getter,
-  Action,
-  Mutation,
-  namespace
-} from 'vuex-class'
+import { namespace } from "vuex-class";
+const AgnesModule = namespace("agnes");
+// import {
+//   State,
+//   Getter,
+//   Action,
+//   Mutation,
+//   namespace
+// } from 'vuex-class'
 
-const AgnesModule = namespace('agnes')
+// const AgnesModule = namespace('agnes')
 
 // Nuxt對Vue的拓展
 // 一定要加, 沒有加的話export default 不會生效
@@ -174,7 +176,7 @@ export default class IndexPage extends Vue {
 
   // ! 表示一定有值不用擔心
   // Vuex State (含 namespace) 取法
-  @State(state => state.agnes.userName) userNameState!: string
+  @AgnesModule.State("userName") userNameState!: string
 
   // Vuex Getters (含 namespace) 取法
   @AgnesModule.Getter('getUserName') getUserName!: string
