@@ -1,4 +1,5 @@
 import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators'
+import { $axios } from '~/utils/api'
 
 @Module({
   name: 'agnes',
@@ -21,5 +22,10 @@ export default class Agnes extends VuexModule {
   public setUserName (userName: string) {
     this.SET_USER_NAME(userName)
     return 'userName'
+  }
+  @Action
+  public fetchData () {
+    const data = $axios.$get('http://icanhazip.com')
+    return data
   }
 }

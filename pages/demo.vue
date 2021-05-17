@@ -81,6 +81,7 @@ export default class IndexPage extends Vue {
   beforeMount() {
     console.log("Before Mount!");
     this.setUserName('HI')
+    this.fetchData()
     console.log("after action:", this.userNameState);
   }
 
@@ -174,6 +175,7 @@ export default class IndexPage extends Vue {
 
   // Vuex Actions (含 namespace) 取法
   @AgnesModule.Action('setUserName') setUserName!: (name: string) => void
+  @AgnesModule.Action('fetchData') fetchData!: () => void
 
   // Vuex Mutations (含 namespace) 取法
   @AgnesModule.Mutation('SET_USER_NAME') SET_USER_NAME!: (name: string) => void
