@@ -6,15 +6,22 @@ export const accessor: ({error, app: {$axios, $cookies}}: {error: any; app: { $a
   initializeAxios($axios)
   initializeCookies($cookies)
 
-  $axios.onRequest((config: AxiosRequestConfig) => {
+  const config = {
+    baseURL: 'https://api-development.indochat.net',
+    headers: { Accept: 'application/json' }
+  }
+  
+  const axios = $axios.create(config)
+
+  axios.onRequest((config: AxiosRequestConfig) => {
     config.headers.Token = "xxxxxxxx"
     return config
   })
-  $axios.onError((err: AxiosError) => {
+  axios.onError((err: AxiosError) => {
     console.log(err.message)
   })
   // response攔截器，資料返回後，可以先在這裡進行一些簡單的判斷
-  $axios.interceptors.response.use((response: AxiosResponse) => {
+  axios.interceptors.response.use((response: AxiosResponse) => {
       const res = response
       if (res.status === 200) {
         return res

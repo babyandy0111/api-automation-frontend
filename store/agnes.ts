@@ -25,7 +25,7 @@ export default class Agnes extends VuexModule {
   }
   @Action
   public fetchData () {
-    const data = $axios.$get('http://icanhazip.com')
+    const data = $axios.$get('/v1/id-area/cities')
     return data
   }
 }
