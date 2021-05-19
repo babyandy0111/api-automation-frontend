@@ -22,13 +22,7 @@ import Message from '@/components/IndexPage/Message.vue';
 })
 
 export default class homePage extends Vue {
-  // data
-  aaa: string = 'hi su3cl3';
-  b: number = 2
-  //methods
-  adda() {
-    this.b++;
-  }
+
 };
 </script>
 
