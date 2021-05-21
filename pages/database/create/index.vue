@@ -2,7 +2,9 @@
   <div class="container mx-auto px-6 py-8">
     <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
       <Table :columns="columns" :listDatas="listDatas">
-        <ButtonRoundMd :buttonText="buttonText" slot="actions" />
+        <div slot="actions">
+          <ButtonRoundMd class="ml-1" v-for="(btn, idx) in actions" :key="idx" :buttonText="btn.buttonText" :buttonFlatColor="btn.buttonFlatColor" />
+        </div>
       </Table>
     </div>
   </div>
@@ -22,8 +24,17 @@ import ButtonRoundMd from '~/components/ButtonRoundMd.vue'
 })
 
 export default class DashboardListPage extends Vue {
-  buttonText: string = '查看'
-  buttonFlatColor: string = 'blue'
+  actions: Array<{ buttonText: string, buttonFlatColor: string }> = [
+    {
+      buttonText: '編輯',
+      buttonFlatColor: 'blue',
+    },
+    {
+      buttonText: '刪除',
+      buttonFlatColor: 'red',
+    }
+  ]
+
   columns: Array<any> = [
     {
       name: 'workspace_name',

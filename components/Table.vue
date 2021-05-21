@@ -15,7 +15,7 @@
           <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200" v-for="(data, name) in datas" :key="name">
             <p class="text-gray-500">{{ data }}</p>
           </td>
-          <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200" :key="name">
+          <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200">
             <slot name="actions" />
           </td>
         </tr>
