@@ -12,9 +12,7 @@
     <tbody class="bg-white">
       <template v-for="(datas, key) in listDatas">
         <tr v-for="(data, idx) in datas" :key="idx">
-          <td
-            class="px-6 py-4 whitespace-nowrap border-b border-gray-200"
-            v-for="col in columns" :key="col.name">
+          <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200" v-for="col in columns" :key="col.name">
             <template v-if="key === col.name">
               <p class="text-gray-500">
                 {{ data.value }}
@@ -22,7 +20,7 @@
             </template>
           </td>
           <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200">
-            <button class="px-3 py-1 bg-green-600 text-white rounded-md text-sm hover:bg-green-700 focus:outline-none transition-colors duration-150">查看</button>
+            <slot name="actions" />
           </td>
         </tr>
       </template>

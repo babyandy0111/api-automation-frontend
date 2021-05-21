@@ -1,7 +1,9 @@
 <template>
   <div class="container mx-auto px-6 py-8">
     <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
-      <Table :columns="columns" :listDatas="listDatas" />
+      <Table :columns="columns" :listDatas="listDatas">
+        <button class="px-3 py-1 bg-green-600 text-white rounded-md text-sm hover:bg-green-700 focus:outline-none transition-colors duration-150" slot="actions">查看</button>
+      </Table>
     </div>
   </div>
 </template>
