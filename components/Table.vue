@@ -10,16 +10,12 @@
       </TableHead>
     </thead>
     <tbody class="bg-white">
-      <template v-for="(datas) in listDatas">
-        <tr v-for="(data, idx) in datas" :key="idx">
-          <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200" v-for="col in columns" :key="col.name">
-            <template v-if="idx === col.name">
-              <p class="text-gray-500">
-                {{ data }}
-              </p>
-            </template>
+      <template v-for="(datas, idx) in listDatas">
+        <tr :key="idx">
+          <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200" v-for="(data, name) in datas" :key="name">
+            <p class="text-gray-500">{{ data }}</p>
           </td>
-          <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200">
+          <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200" :key="name">
             <slot name="actions" />
           </td>
         </tr>
