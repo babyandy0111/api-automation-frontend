@@ -10,6 +10,9 @@
     "tailwindcss": "tailwindcss init --full"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
     "@nuxtjs/axios": "^5.13.1",
     "cookie-universal-nuxt": "^2.1.4",
     "core-js": "^3.9.1",
