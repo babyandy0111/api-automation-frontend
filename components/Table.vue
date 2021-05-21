@@ -3,7 +3,7 @@
     <thead>
       <TableHead :columns="columns">
         <input
-          class="w-6/12 rounded-full px-4 py-2 border-2 border-cool-gray-3 outline-none focus:border-green-500 transition-all duration-150"
+          class="w-48 rounded-full px-4 py-2 border-2 border-cool-gray-3 outline-none focus:border-green-500 focus:w-96 transition-all duration-150"
           type="text" name="search" id="search"
           placeholder="Search"
         />
