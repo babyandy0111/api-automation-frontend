@@ -28,19 +28,17 @@ export default class DashboardListPage extends Vue {
     {
       name: 'table_name',
       label: 'Table Name',
-    },
+    }
   ]
 
-  listDatas: {} = {
-    table_name: [
-      {
-        value: 'channel',
-      },
-      {
-        value: 'channel_member',
-      },
-    ]
-  }
+  listDatas: Array<any> = [
+    {
+      table_name: 'channel',
+    },
+    {
+      table_name: 'channel_member',
+    }
+  ]
 }
 </script>
 

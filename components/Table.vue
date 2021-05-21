@@ -10,12 +10,12 @@
       </TableHead>
     </thead>
     <tbody class="bg-white">
-      <template v-for="(datas, key) in listDatas">
+      <template v-for="(datas) in listDatas">
         <tr v-for="(data, idx) in datas" :key="idx">
           <td class="px-6 py-4 whitespace-nowrap border-b border-gray-200" v-for="col in columns" :key="col.name">
-            <template v-if="key === col.name">
+            <template v-if="idx === col.name">
               <p class="text-gray-500">
-                {{ data.value }}
+                {{ data }}
               </p>
             </template>
           </td>
@@ -39,7 +39,8 @@ import TableHead from '~/components/TableHead.vue'
 export default class TableList extends Vue {
   @Prop({ type: Array, required: true, default: () => { return [] } })
   columns!: Array<any>
-  @Prop({ type: Object, required: true, default: () => { return {} } })
-  listDatas!: {}
+
+  @Prop({ type: Array, required: true, default: () => { return [] } })
+  listDatas!: Array<any>
 }
 </script>
