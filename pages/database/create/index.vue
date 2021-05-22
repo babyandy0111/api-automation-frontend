@@ -26,11 +26,11 @@ import ButtonRoundMd from '~/components/ButtonRoundMd.vue'
 export default class DashboardListPage extends Vue {
   actions: Array<{ buttonText: string, buttonFlatColor: string }> = [
     {
-      buttonText: '編輯',
+      buttonText: 'Edit',
       buttonFlatColor: 'blue',
     },
     {
-      buttonText: '刪除',
+      buttonText: 'Delete',
       buttonFlatColor: 'red',
     }
   ]

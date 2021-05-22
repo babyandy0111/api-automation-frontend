@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen bg-gray-200">
+  <div class="flex h-screen bg-cool-gray-200">
     <aside class="flex">
       <Sidebar />
     </aside>

@@ -22,7 +22,7 @@ import ButtonRoundMd from '~/components/ButtonRoundMd.vue'
 })
 
 export default class DashboardListPage extends Vue {
-  buttonText: string = '查看'
+  buttonText: string = 'View'
   buttonFlatColor: string = 'blue'
   columns: Array<any> = [
     {
