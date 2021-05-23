@@ -6,18 +6,18 @@ export default {
       lang: 'en'
     },
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: ''}
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@fortawesome/fontawesome-svg-core/styles.css',
+    '@fortawesome/fontawesome-svg-core/styles.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -35,7 +35,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+    '@nuxtjs/tailwindcss'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -58,11 +58,11 @@ export default {
   build: {
     extractCSS: true,
     babel: {
-      plugins: [['@babel/plugin-proposal-private-methods', {loose: true}]],
+      plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]]
     },
     transpile: [
-      "vee-validate/dist/rules"
-    ],
+      'vee-validate/dist/rules'
+    ]
   },
 
   purgeCSS: {
@@ -71,5 +71,18 @@ export default {
 
   router: {
     middleware: ['auth']
+  },
+
+  extends: [
+    '@nuxtjs/eslint-config-typescript'
+  ],
+
+  typescript: {
+    typeCheck: {
+      eslint: {
+        files: './src/**/*.{ts,js,vue}'
+      }
+    }
   }
+
 }
