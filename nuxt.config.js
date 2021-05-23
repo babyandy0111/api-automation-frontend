@@ -70,6 +70,6 @@ export default {
   },
 
   router: {
-    middleware: ['class']
+    middleware: ['auth']
   }
 }

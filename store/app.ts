@@ -7,6 +7,7 @@ import { $axios } from '~/utils/api'
   stateFactory: true
 })
 export default class App extends VuexModule {
+  public authenticated: boolean = false
   public sidebar: Array<any> = [
     {
       label: '資料庫管理',
@@ -42,4 +43,14 @@ export default class App extends VuexModule {
       ]
     }
   ]
+
+  public get getAuthenticated () {
+    return this.authenticated
+  }
+
+  @Mutation
+  SET_TOKEN (payload: boolean) {
+    console.log('SET_TOKEN')
+    this.authenticated = payload
+  }
 }
