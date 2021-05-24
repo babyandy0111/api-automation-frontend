@@ -24,7 +24,8 @@ export default {
   plugins: [
     '@/plugins/axios',
     '@/plugins/fontawesome',
-    '@/plugins/vee-validate'
+    '@/plugins/vee-validate',
+    '@/plugins/i18n'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -41,7 +42,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    'cookie-universal-nuxt'
+    'cookie-universal-nuxt',
+    'nuxt-i18n',
   ],
 
   /*
