@@ -19,6 +19,7 @@
     "@typescript-eslint/parser": "^4.24.0",
     "cookie-universal-nuxt": "^2.1.4",
     "core-js": "^3.9.1",
+    "eslint-config-prettier": "^8.3.0",
     "nuxt": "^2.15.3",
     "vee-validate": "^3.4.5",
     "vue-class-component": "^7.2.6",
